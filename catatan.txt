@@ -1,0 +1,20 @@
+- membuat folder
+- membuat env
+- membuat config
+- membuat paginate 
+- membuat response.go
+- membuat database sql 
+- membuat entity/user.go
+- membuat auth_dto.go
+-membuat beberapa folder
+- membuat auth_repository.go
+- membuat auth_service.go
+- membuat auth_handler.go
+- membuat passord.go
+- membuat auth_router.go
+
+
+entity-dto-repository-service-handler-router-helper
+
+
+
