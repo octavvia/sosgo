@@ -1,0 +1,29 @@
+services:
+  web:
+    container_name: viia_sosgo
+    image: viia_sosgo:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - db
+  db:
+    container_name: sosgo_db
+    image: mysql:latest
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: viia
+    volumes:
+      - viia_mysql_data:/var/lib/mysql
+      - ./table.sql:/docker-entrypoint-initdb.d/table.sql
+    ports:
+      - "3306:33060"
+
+volumes:
+  viia_mysql_data:
