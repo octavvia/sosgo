@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "46177321-f851-4c56-b335-6980b8921452",
+		"name": "sosgo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28893209"
+	},
+	"item": [
+		{
+			"name": "speach-tweet",
+			"item": [
+				{
+					"name": "speach",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzE5MTM0OTY4LCJuYmYiOjE3MTkxMzEzNjgsImlhdCI6MTcxOTEzMTM2OH0.Qm_XUxfxqhlfu9mFrhvoMFcUrAnR7Ci-8oTOSjbba4c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tweet",
+									"value": "hellow",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": "/Users/octavvia/Downloads/dave-hoefler-4pvfpUkmR6I-unsplash.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/tweets",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tweets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzE5MTM0OTY4LCJuYmYiOjE3MTkxMzEzNjgsImlhdCI6MTcxOTEzMTM2OH0.Qm_XUxfxqhlfu9mFrhvoMFcUrAnR7Ci-8oTOSjbba4c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "post_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/tweets",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tweets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzE5MTM2ODU4LCJuYmYiOjE3MTkxMzMyNTgsImlhdCI6MTcxOTEzMzI1OH0.tYEpS5RjC6wtg7LxZ8DhkaQl8xO5KzyheSYmGfBt7EU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tweet",
+									"value": "lalala",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": "/Users/octavvia/Downloads/kenrick-mills-MF9Wy1NA55I-unsplash.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/tweets/2/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tweets",
+								"2",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzE5MTM2ODU4LCJuYmYiOjE3MTkxMzMyNTgsImlhdCI6MTcxOTEzMzI1OH0.tYEpS5RjC6wtg7LxZ8DhkaQl8xO5KzyheSYmGfBt7EU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/tweets/me",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tweets",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"octav\",\n    \"email\": \"octav@gmail.com\",\n    \"password\":\"1234qwerty\",\n    \"password_confirm\": \"1234qwerty\",\n    \"gender\":\"female\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"viamail@gmail.com\",\n    \"password\":\"1234qwerty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
